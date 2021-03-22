@@ -7,16 +7,29 @@
 //Morning = red, Afternoon = green, Night = blue.
 
 import React from "react";
-import ReactDOM from "react-dom"
+import ReactDOM from "react-dom";
 
 const date = new Date();
 const hours = date.getHours();
+var heading;
+const customStyle = {
+  color: "black"
+};
+
+if ((hours >= 0) & (hours <= 12)) {
+  customStyle.color = "red";
+  heading = "Good Morning";
+} else if ((hours >= 12) & (hours <= 18)) {
+  customStyle.color = "green";
+  heading = "Good afternoon";
+} else {
+  customStyle.color = "blue";
+  heading = "Good Night";
+}
 
 ReactDOM.render(
-   
-   if(hours>=0 & hours<=12){
-    <h1>Good Morning</h1>
-   }
-  ,
+  <h1 className="heading" style={customStyle}>
+    {heading}
+  </h1>,
   document.getElementById("root")
 );

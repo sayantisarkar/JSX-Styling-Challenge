@@ -11,9 +11,9 @@ import ReactDOM from "react-dom";
 
 const date = new Date();
 const hours = date.getHours();
-var heading;
+let heading;
 const customStyle = {
-  color: "black"
+  color: ""
 };
 
 if ((hours >= 0) & (hours <= 12)) {
